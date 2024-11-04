@@ -392,16 +392,16 @@ jQuery(document).ready(function($)
 		$( "#slider-range" ).slider(
 		{
 			range: true,
-			min: 0,
-			max: 1000,
+			min: 50,
+			max: 2000,
 			values: [ 0, 580 ],
 			slide: function( event, ui )
 			{
-				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				$( "#amount" ).val( "₱" + ui.values[ 0 ] + " - ₱" + ui.values[ 1 ] );
 			}
 		});
 			
-		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		$( "#amount" ).val( "₱" + $( "#slider-range" ).slider( "values", 0 ) + " - ₱" + $( "#slider-range" ).slider( "values", 1 ) );
     }
 
     /* 
