@@ -322,7 +322,7 @@ jQuery(document).ready(function($)
 	            getSortData: {
 	            	price: function(itemElement)
 	            	{
-	            		var priceEle = $(itemElement).find('.product_price').text().replace( '$', '' );
+	            		var priceEle = $(itemElement).find('.product_price').text().replace( '₱', '' );
 	            		return parseFloat(priceEle);
 	            	},
 	            	name: '.product_name'
@@ -365,9 +365,9 @@ jQuery(document).ready(function($)
 		            filter: function()
 		            {
 		            	var priceRange = $('#amount').val();
-			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('$', ''));
-			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('$', ''));
-			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( '$', '' );
+			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('₱', ''));
+			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('₱', ''));
+			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( '₱', '' );
 
 			        	return (itemPrice > priceMin) && (itemPrice < priceMax);
 		            },
@@ -392,9 +392,9 @@ jQuery(document).ready(function($)
 		$( "#slider-range" ).slider(
 		{
 			range: true,
-			min: 50,
-			max: 2000,
-			values: [ 0, 580 ],
+			min: 0,
+			max: 25000,
+			values: [ 0, 18000 ],
 			slide: function( event, ui )
 			{
 				$( "#amount" ).val( "₱" + ui.values[ 0 ] + " - ₱" + ui.values[ 1 ] );
